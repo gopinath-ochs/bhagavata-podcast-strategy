@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Bhagavata Podcast Data Brief</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap">
 <style>
@@ -181,6 +187,17 @@
   .hit { fill: transparent; cursor: crosshair; }
   .crosshair { stroke: var(--ink); stroke-width: 1; opacity: 0; }
 
+  .pagenav {
+    display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: baseline;
+    margin: 0 0 8px; font-size: 0.85rem;
+  }
+  .pagenav a {
+    color: var(--burgundy); font-weight: 600; text-decoration: none;
+    border-bottom: 1px solid rgba(123,45,59,0.35); padding-bottom: 1px;
+  }
+  .pagenav a:hover, .pagenav a:focus { border-bottom-color: var(--burgundy); }
+  .pagenav a:focus-visible { outline: 2px solid var(--saffron-deep); outline-offset: 3px; }
+  .pagenav .here { color: var(--warm-gray); font-weight: 600; }
   footer {
     border-top: 2px solid var(--ink); margin-top: 56px;
     padding: 24px 0 48px; font-size: 0.82rem; color: var(--warm-gray);
@@ -196,10 +213,17 @@
     * { transition: none !important; }
   }
 </style>
+</head>
+<body>
 
 <div class="wrap">
 
 <header class="masthead">
+  <nav class="pagenav" aria-label="Report sections">
+    <span class="here">Data Brief</span>
+    <span aria-hidden="true">·</span>
+    <a href="index.html">Season 2 Strategy Report →</a>
+  </nav>
   <div class="eyebrow">Oxford Centre for Hindu Studies · Gaudiya Studies Research Programme</div>
   <h1>The Bhagavata Podcast<br>Data Brief</h1>
   <p class="standfirst">Every measured figure for the channel and the podcast feed, with the analysis that follows directly from it. No recommendations — this document reports and diagnoses, nothing more.</p>
@@ -684,7 +708,8 @@
 
 <footer>
   <p><strong>The Bhagavata Podcast</strong> · Oxford Centre for Hindu Studies / Gaudiya Studies Research Programme</p>
-  <p>Data brief compiled 18 August 2026 from YouTube Studio, Buzzsprout and Spotify for Creators exports. Companion to the Season 2 strategy report, which carries the recommendations this document deliberately omits.</p>
+  <p>Data brief compiled 18 August 2026 from YouTube Studio, Buzzsprout, Apple Podcasts Connect and Spotify for Creators exports.</p>
+  <p style="margin-top:10px">Companion document: <a href="index.html" style="color:var(--saffron-deep);font-weight:600">The Season 2 Strategy Report</a> — which carries the recommendations this brief deliberately omits.</p>
 </footer>
 
 </div>
@@ -818,3 +843,5 @@ barChart('c-ret',8,'%',21.8,35,7);
   box.insertBefore(svg,tip);
 })();
 </script>
+</body>
+</html>
