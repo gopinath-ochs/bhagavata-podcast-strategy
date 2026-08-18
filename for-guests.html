@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Bhagavata Podcast — A Thank You and an Update</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --saffron: #E8A838;
+    --saffron-light: #FFF3DC;
+    --saffron-dark: #C4861F;
+    --burgundy: #7B2D3B;
+    --burgundy-light: #F5E6E9;
+    --ink: #1A1A2E;
+    --ink-light: #3D3D56;
+    --cream: #FFFCF5;
+    --warm-gray: #6B6B7B;
+    --border: #E8E4DD;
+    --accent-green: #2D6B4A;
+    --accent-green-light: #E6F5ED;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 17px;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+
+  nav.pagenav {
+    display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline;
+    max-width: 700px; margin: 0 auto; padding: 20px 24px 0;
+    font-size: 0.85rem;
+  }
+  .pagenav a {
+    color: var(--burgundy); font-weight: 600; text-decoration: none;
+    border-bottom: 1px solid rgba(123,45,59,0.35); padding-bottom: 1px;
+  }
+  .pagenav a:hover, .pagenav a:focus { border-bottom-color: var(--burgundy); }
+  .pagenav a:focus-visible { outline: 2px solid var(--saffron-dark); outline-offset: 3px; }
+  .pagenav .here { color: var(--warm-gray); font-weight: 600; }
+
+  header.cover {
+    text-align: center;
+    padding: 48px 24px 40px;
+  }
+  .cover-badge {
+    display: inline-block;
+    background: var(--saffron-light);
+    color: var(--saffron-dark);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+  header.cover h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 6vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-wrap: balance;
+    color: var(--burgundy);
+    margin-bottom: 16px;
+  }
+  header.cover .subtitle {
+    font-size: 1.15rem;
+    color: var(--ink-light);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  section { margin-bottom: 48px; }
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    text-wrap: balance;
+    margin-bottom: 16px;
+  }
+  p { margin-bottom: 16px; color: var(--ink-light); font-size: 1.05rem; }
+  p.lead {
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .bignum-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .bignum {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 14px;
+    text-align: center;
+  }
+  .bignum .num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    line-height: 1.1;
+  }
+  .bignum .lbl {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin: 20px 0;
+  }
+  .card-good { border-left: 4px solid var(--accent-green); background: var(--accent-green-light); }
+  .card-note { border-left: 4px solid var(--saffron); background: var(--saffron-light); }
+  .card-ask { border-left: 4px solid var(--burgundy); background: var(--burgundy-light); }
+  .card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .card-good h3 { color: var(--accent-green); }
+  .card-note h3 { color: var(--saffron-dark); }
+  .card-ask h3 { color: var(--burgundy); }
+  .card p:last-child { margin-bottom: 0; }
+
+  .divider {
+    text-align: center;
+    color: var(--saffron);
+    font-size: 1.3rem;
+    letter-spacing: 12px;
+    margin: 44px 0;
+  }
+
+  .map-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 16px 0 8px;
+  }
+  .flag-pill {
+    background: white; border: 1px solid var(--border); border-radius: 20px;
+    padding: 8px 16px; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;
+  }
+  .flag-pill b { color: var(--burgundy); }
+
+  .ask-list { list-style: none; margin: 12px 0 0; }
+  .ask-list li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    font-size: 1.05rem;
+    color: var(--ink-light);
+  }
+  .ask-list li::before {
+    content: '♥';
+    position: absolute; left: 0; top: 9px;
+    color: var(--burgundy);
+    font-size: 1.1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    color: var(--warm-gray);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--burgundy); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(123,45,59,0.3); }
+
+  @media (max-width: 520px) {
+    .bignum-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .bignum { padding: 16px 8px; }
+    .bignum .num { font-size: 1.6rem; }
+    .card { padding: 20px; }
+    header.cover { padding: 32px 20px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="pagenav" aria-label="Report sections">
+  <span class="here">For Guests &amp; Supporters</span>
+  <span aria-hidden="true">·</span>
+  <a href="index.html">Season 2 Strategy Report →</a>
+  <span aria-hidden="true">·</span>
+  <a href="data.html">Full Data Brief →</a>
+</nav>
+
+<header class="cover">
+  <div class="cover-badge">A note from the production team</div>
+  <h1>The Bhagavata Podcast Is Growing —<br>Here's What That Looks Like</h1>
+  <p class="subtitle">A short, friendly update for the scholars, guests, and supporters who make this show possible.</p>
+</header>
+
+<div class="wrap">
+
+<section>
+  <p class="lead">If you've been a guest on the podcast, or you've simply cheered it on from a distance, thank you. Six months ago we sat down to figure out how to grow this show — and now we have real numbers to show you what happened. Here's the story, in plain terms.</p>
+</section>
+
+<section>
+  <h2>The Short Version</h2>
+  <p>People are finding the podcast, watching more of it, and coming back for more — across YouTube, Apple Podcasts, and Spotify. Growth isn't explosive, but it's real, and it's the kind that tends to keep building.</p>
+
+  <div class="bignum-row">
+    <div class="bignum">
+      <div class="num">66K</div>
+      <div class="lbl">Views on YouTube</div>
+    </div>
+    <div class="bignum">
+      <div class="num">640</div>
+      <div class="lbl">YouTube subscribers</div>
+    </div>
+    <div class="bignum">
+      <div class="num">6,600</div>
+      <div class="lbl">Podcast downloads</div>
+    </div>
+  </div>
+
+  <p>Since March, views are up <strong>45%</strong>, subscribers are up <strong>46%</strong>, and downloads are up <strong>81%</strong>. Twenty-six episodes have now been released, and Season 2 — the conversations exploring the Second Canto — is well underway.</p>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<section>
+  <h2>Where People Are Actually Listening</h2>
+  <p>One of the most interesting things we learned is that <strong>the podcast doesn't have one audience — it has four</strong>, and they don't look alike at all.</p>
+
+  <div class="map-row">
+    <div class="flag-pill">🇮🇳 <b>Spotify</b> is mostly India</div>
+    <div class="flag-pill">🇺🇸 <b>YouTube</b> is mostly the US</div>
+    <div class="flag-pill">🇺🇸 <b>Apple Podcasts</b> is very US-heavy</div>
+  </div>
+
+  <p>On YouTube, most viewers are men in their late 20s and 30s. On Spotify, the audience is older and much more evenly split between men and women. In other words: this show is reaching very different kinds of people depending on where they find it — which is a wonderful sign for a text as universal as the Bhagavata.</p>
+
+  <div class="card card-good">
+    <h3>The nicest surprise: people who listen, really listen</h3>
+    <p>On Apple Podcasts, listeners are sticking with episodes for <strong>almost half to over three-quarters of the whole conversation</strong> — some episodes even more. That's unusually high for an hour-long, scholarly discussion. It tells us the people who commit to listening are genuinely engaged, not just passing through.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What's Working</h2>
+
+  <div class="card card-good">
+    <h3>Better titles are getting more people to click</h3>
+    <p>Back in March, we noticed the episode titles read like a syllabus — helpful if you already knew the material, invisible if you didn't. We rewrote them as real questions: <em>"Who Created the Creator?"</em> instead of <em>"2.5 with Sri Prahlada Dasa."</em> It worked. Episodes are now getting clicked on noticeably more often than before.</p>
+  </div>
+
+  <div class="card card-good">
+    <h3>Women guests are landing especially well</h3>
+    <p>Episodes featuring Manjari Devi Dasi and Anuradha Devi Dasi have performed above average on every measure we track. If you know a woman scholar-practitioner who'd be a wonderful guest, that's a warm invitation.</p>
+  </div>
+
+  <div class="card card-good">
+    <h3>The hour-long format is not the problem</h3>
+    <p>We'd worried that a full hour was too long for casual viewers. The data says otherwise — some episodes hold nearly a third of their viewers for the entire runtime, and Apple listeners routinely stay for most of an episode. The depth of these conversations is a strength, not an obstacle.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What We're Still Working On</h2>
+
+  <div class="card card-note">
+    <h3>The first 30 seconds lose almost half the audience</h3>
+    <p>This happens on our best-loved episodes and our least-loved ones equally — so it isn't about any one guest or topic. It's simply the moment when a curious click either turns into real listening, or doesn't. We're working on stronger, more inviting openings to change that.</p>
+  </div>
+
+  <div class="card card-note">
+    <h3>Our biggest hit came with a catch</h3>
+    <p>One recent episode brought in a wave of new viewers and subscribers — wonderful news. But most of those new viewers didn't stay for the full conversation. It's a reminder that a big spike in attention and a loyal, lasting audience are two different things, and we want both.</p>
+  </div>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<section>
+  <h2>How You Can Help</h2>
+  <p>None of this happens without the guests and supporters who give their time, scholarship, and voice to this project. If you'd like to help the podcast reach further, here's what actually makes a difference:</p>
+
+  <ul class="ask-list">
+    <li><strong>Share your episode</strong> with your own students, colleagues, or community — a personal recommendation travels further than any algorithm.</li>
+    <li><strong>Leave a rating or a kind comment</strong> on Apple Podcasts or Spotify if you enjoyed a conversation — these genuinely help new listeners discover the show.</li>
+    <li><strong>Tell us if you know a guest we should have on</strong> — especially women scholar-practitioners, whose episodes have performed wonderfully so far.</li>
+    <li><strong>If you belong to a temple, sangha, or study group,</strong> consider sharing an episode as a discussion starter — we're building simple study guides to make that easier.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="card card-ask">
+    <h3>Curious about the deeper numbers?</h3>
+    <p>This page is the short version, on purpose. If you'd like the full picture — every episode measured, every platform compared, and the reasoning behind it — the <a href="data.html" style="color:var(--burgundy);font-weight:700">complete Data Brief</a> has it all, and the <a href="index.html" style="color:var(--burgundy);font-weight:700">Season 2 Strategy Report</a> covers what we're planning to do next.</p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><strong style="color:var(--burgundy)">The Bhagavata Podcast</strong> · Oxford Centre for Hindu Studies / Gaudiya Studies Research Programme</p>
+  <p style="margin-top:6px">With gratitude to every guest and listener who has made this first year possible.</p>
+</footer>
+
+</body>
+</html>
