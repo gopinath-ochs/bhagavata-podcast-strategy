@@ -173,6 +173,78 @@
     font-size: 1.1rem;
   }
 
+  .barchart {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 20px 0;
+  }
+  .barchart h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .bar-row { margin-bottom: 14px; }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-labels {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 5px; font-size: 0.92rem;
+  }
+  .bar-labels .name { color: var(--ink-light); font-weight: 500; }
+  .bar-labels .val { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .bar-track {
+    height: 12px; background: var(--border); border-radius: 6px; overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%; border-radius: 6px;
+    background: var(--saffron);
+  }
+  .bar-fill.now { background: var(--burgundy); }
+  .bar-fill.best { background: var(--accent-green); }
+  .bar-fill.worst { background: var(--saffron-dark); }
+  .barchart .caption {
+    font-size: 0.82rem; color: var(--warm-gray); margin-top: 14px; margin-bottom: 0;
+    font-style: italic;
+  }
+  .spotlight {
+    background: white;
+    border: 2px solid var(--saffron);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin: 20px 0;
+  }
+  .spotlight .tag {
+    display: inline-block;
+    background: var(--saffron-light);
+    color: var(--saffron-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  .spotlight h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+  }
+  .spotlight .stat-strip {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    margin: 14px 0 12px;
+  }
+  .spotlight .stat-strip div { text-align: left; }
+  .spotlight .stat-strip .n {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--burgundy); line-height: 1.1;
+  }
+  .spotlight .stat-strip .l { font-size: 0.78rem; color: var(--warm-gray); margin-top: 2px; }
+
   footer {
     text-align: center;
     padding: 32px 24px 48px;
@@ -232,6 +304,35 @@
   </div>
 
   <p>Since March, views are up <strong>45%</strong>, subscribers are up <strong>46%</strong>, and downloads are up <strong>81%</strong>. Twenty-six episodes have now been released, and Season 2 — the conversations exploring the Second Canto — is well underway.</p>
+
+  <div class="barchart">
+    <h4>March vs. Today</h4>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Views — March</span><span class="val">45,500</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:69%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Views — Today</span><span class="val">65,800</span></div>
+      <div class="bar-track"><div class="bar-fill now" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row" style="margin-top:20px">
+      <div class="bar-labels"><span class="name">Subscribers — March</span><span class="val">439</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:69%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Subscribers — Today</span><span class="val">640</span></div>
+      <div class="bar-track"><div class="bar-fill now" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row" style="margin-top:20px">
+      <div class="bar-labels"><span class="name">Downloads — March</span><span class="val">3,657</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:55%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Downloads — Today</span><span class="val">6,632</span></div>
+      <div class="bar-track"><div class="bar-fill now" style="width:100%"></div></div>
+    </div>
+    <p class="caption">Every bar has grown. Downloads grew the fastest of the three.</p>
+  </div>
 </section>
 
 <div class="divider">✦ ✦ ✦</div>
@@ -241,9 +342,9 @@
   <p>One of the most interesting things we learned is that <strong>the podcast doesn't have one audience — it has four</strong>, and they don't look alike at all.</p>
 
   <div class="map-row">
-    <div class="flag-pill">🇮🇳 <b>Spotify</b> is mostly India</div>
-    <div class="flag-pill">🇺🇸 <b>YouTube</b> is mostly the US</div>
-    <div class="flag-pill">🇺🇸 <b>Apple Podcasts</b> is very US-heavy</div>
+    <div class="flag-pill">🇮🇳 <b>Spotify</b> — 59 in every 100 listeners are in India</div>
+    <div class="flag-pill">🇺🇸 <b>YouTube</b> — 28 in every 100 viewers are in the US</div>
+    <div class="flag-pill">🇺🇸 <b>Apple Podcasts</b> — mostly US, with India, the UK, and Australia next</div>
   </div>
 
   <p>On YouTube, most viewers are men in their late 20s and 30s. On Spotify, the audience is older and much more evenly split between men and women. In other words: this show is reaching very different kinds of people depending on where they find it — which is a wonderful sign for a text as universal as the Bhagavata.</p>
@@ -252,6 +353,23 @@
     <h3>The nicest surprise: people who listen, really listen</h3>
     <p>On Apple Podcasts, listeners are sticking with episodes for <strong>almost half to over three-quarters of the whole conversation</strong> — some episodes even more. That's unusually high for an hour-long, scholarly discussion. It tells us the people who commit to listening are genuinely engaged, not just passing through.</p>
   </div>
+
+  <div class="barchart">
+    <h4>Which App Are People Using?</h4>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">🎧 Apple Podcasts</span><span class="val">72 in 100</span></div>
+      <div class="bar-track"><div class="bar-fill now" style="width:72%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">🎵 Spotify</span><span class="val">15 in 100</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:15%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">🌐 Everything else</span><span class="val">13 in 100</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:13%;background:var(--warm-gray)"></div></div>
+    </div>
+    <p class="caption">Out of every 100 people who download an episode to listen, about 72 are using Apple Podcasts.</p>
+  </div>
 </section>
 
 <section>
@@ -259,7 +377,20 @@
 
   <div class="card card-good">
     <h3>Better titles are getting more people to click</h3>
-    <p>Back in March, we noticed the episode titles read like a syllabus — helpful if you already knew the material, invisible if you didn't. We rewrote them as real questions: <em>"Who Created the Creator?"</em> instead of <em>"2.5 with Sri Prahlada Dasa."</em> It worked. Episodes are now getting clicked on noticeably more often than before.</p>
+    <p>Back in March, we noticed the episode titles read like a syllabus — helpful if you already knew the material, invisible if you didn't. We rewrote them as real questions: <em>"Who Created the Creator?"</em> instead of <em>"2.5 with Sri Prahlada Dasa."</em> It worked. Out of every 100 people who see an episode thumbnail, about <strong>5 or 6 now click on it</strong> — compared to about <strong>4</strong> before we changed the titles.</p>
+  </div>
+
+  <div class="barchart">
+    <h4>How Often Do People Click? (Out of Every 100 Who See a Thumbnail)</h4>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Old titles (Season 1)</span><span class="val">4.3 clicks</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:79%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">New titles (Season 2)</span><span class="val">5.5 clicks</span></div>
+      <div class="bar-track"><div class="bar-fill now" style="width:100%"></div></div>
+    </div>
+    <p class="caption">A small-sounding change — 4.3 to 5.5 — is actually a 27% jump. That's the difference a good question in the title makes.</p>
   </div>
 
   <div class="card card-good">
@@ -278,12 +409,32 @@
 
   <div class="card card-note">
     <h3>The first 30 seconds lose almost half the audience</h3>
-    <p>This happens on our best-loved episodes and our least-loved ones equally — so it isn't about any one guest or topic. It's simply the moment when a curious click either turns into real listening, or doesn't. We're working on stronger, more inviting openings to change that.</p>
+    <p>Out of every <strong>100 people who click play, about 53 are still watching 30 seconds in</strong> — and that's true whether the episode goes on to be one of our best or one of our quietest. So it isn't about any one guest or topic. It's simply the moment when a curious click either turns into real listening, or doesn't. We're working on stronger, more inviting openings to change that.</p>
   </div>
 
-  <div class="card card-note">
-    <h3>Our biggest hit came with a catch</h3>
-    <p>One recent episode brought in a wave of new viewers and subscribers — wonderful news. But most of those new viewers didn't stay for the full conversation. It's a reminder that a big spike in attention and a loyal, lasting audience are two different things, and we want both.</p>
+  <div class="barchart">
+    <h4>Our Best Episode vs. a Trickier One</h4>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Best: viewers watch on average</span><span class="val">18 of 57 minutes</span></div>
+      <div class="bar-track"><div class="bar-fill best" style="width:31%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-labels"><span class="name">Trickier one: viewers watch on average</span><span class="val">7 of 60 minutes</span></div>
+      <div class="bar-track"><div class="bar-fill worst" style="width:11%"></div></div>
+    </div>
+    <p class="caption">Same length, same format, same host — and yet one holds nearly three times longer than the other. That gap is where we're focusing next.</p>
+  </div>
+
+  <div class="spotlight">
+    <span class="tag">Episode spotlight</span>
+    <h3>"Who Created the Creator?" — a big win, with a lesson attached</h3>
+    <p>This episode, with guest Sri Prahlada Dasa, is one of our best-performing of the year — and a good example of "the catch" above.</p>
+    <div class="stat-strip">
+      <div><div class="n">1,306</div><div class="l">views</div></div>
+      <div><div class="n">34</div><div class="l">new subscribers</div></div>
+      <div><div class="n">21,000+</div><div class="l">people shown the thumbnail</div></div>
+    </div>
+    <p>It brought in more new subscribers than almost any other Season 2 episode — but the people who clicked on it watched a smaller share of it than usual. Our read: a great title and a great guest got a lot of new people to try the show. Turning "tried it once" into "listens every time" is the next step.</p>
   </div>
 </section>
 
